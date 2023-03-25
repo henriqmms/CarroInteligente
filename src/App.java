@@ -2,6 +2,18 @@ public class App {
     public static void main(String[] args) throws Exception {
         Carro meuCarro = new Carro();
 
+        meuCarro.ligarMotor();
+        meuCarro.colocaPassageiros(2);
+        meuCarro.desligarMotor();
+        meuCarro.ativarAlarme();
+        meuCarro.adicionarBagagem(50);
+        meuCarro.abrirPortaMalas();
+        meuCarro.colocaCinto(2);
+        meuCarro.setAlturaDoVidro(AlturaDoVidro.ABERTO);
+        meuCarro.removeCinto(1);
+        meuCarro.removePassageiros(1);
+        meuCarro.removerBagagem(20);
+
         System.out.println("\nO carro atualmente esta nas seguintes condicoes:\n");
 
         if (meuCarro.isAlarmeAtivado()) {

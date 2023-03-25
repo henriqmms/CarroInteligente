@@ -16,6 +16,7 @@ public class Carro implements CarroInteligente {
     public void ligarMotor() {
         if (numeroPassageiros == quantidadePassageirosComCinto && !portasAbertas && numeroPassageiros <= numeroMaximoDePassageiros && pesoBagagem <= limiteDePesoDaBagagem && !portaMalaAberto) {
         this.motorLigado = true;
+        System.out.println("Motor ligado com sucesso.");
         }
     }
     
@@ -23,6 +24,9 @@ public class Carro implements CarroInteligente {
         this.motorLigado = false;
         if (numeroPassageiros > 0){
             this.alturaDoVidro = AlturaDoVidro.ABERTO_APENAS_UMA_FRESTA;
+            System.out.println("Motor desligado com sucesso. | ATENCAO: Os vidros foram mantidos abertos com apenas uma fresta pois ha passageiros no carro!");
+        } else {
+            System.out.println("Motor desligado com sucesso.");
         }
     }
 
@@ -33,11 +37,13 @@ public class Carro implements CarroInteligente {
     public void abrirPortas() {
         if (!motorLigado){
         this.portasAbertas = true;
+        System.out.println("Portas abertas com sucesso.");
         }
     }
 
     public void fecharPortas() {
         this.portasAbertas = false;
+        System.out.println("Portas fechadas com sucesso.");
     }
 
     public boolean isPortasAbertas() {
@@ -46,18 +52,24 @@ public class Carro implements CarroInteligente {
 
     public void ativarAlarme() {
         if(!motorLigado && numeroPassageiros == 0){
-        this.alarmeAtivado = true;
-        if(numeroPassageiros == 0) {
-            this.alturaDoVidro = AlturaDoVidro.FECHADO;
-        }
-        if(isRadioLigado()) {
-            this.radioLigado = false;
-        }
+            this.alarmeAtivado = true;
+            if(numeroPassageiros == 0) {
+                this.alturaDoVidro = AlturaDoVidro.FECHADO;
+                System.out.println("Alarme ativado com sucesso e o vidro foi fechado automaticamente.");
+            } else {
+                if(isRadioLigado()) {
+                    this.radioLigado = false;
+                    System.out.println("Alarme ativado com sucesso e o radio foi desligado automaticamente.");
+                } else {
+                    System.out.println("Alarme ativado com sucesso.");
+                }
+            }
         }
     }
 
     public void desativarAlarme() {
         this.alarmeAtivado = false;
+        System.out.println("Alarme desativado com sucesso.");
     }
 
     public boolean isAlarmeAtivado() {
@@ -69,17 +81,21 @@ public class Carro implements CarroInteligente {
             if (marcha != Marcha.RE) {
                 if (velocidade >= 0) {
                     this.marchaEngatada = marcha;
+                    System.out.println("Marcha " + this.marchaEngatada + " engatada com sucesso.");
                 } else {
                     this.marchaEngatada = Marcha.RE;
+                    System.out.println("Marcha RE engatada com sucesso.");
                 }
             } else {
                 this.marchaEngatada = Marcha.RE;
+                System.out.println("Marcha RE engatada com sucesso.");
             }
         }
     }
 
     public void desengatarMarcha() {
         this.marchaEngatada = null;
+        System.out.println("Marcha desengatada com sucesso.");
     }
 
     public Marcha marchaEngatada() {
@@ -93,14 +109,17 @@ public class Carro implements CarroInteligente {
     public void acelerar(double kilometrosHora) {
         if (this.marchaEngatada == Marcha.RE) {
             this.velocidade -= kilometrosHora;
+            System.out.println("Voce acelerou ate "+ this.velocidade +" km/h com sucesso.");
         } else {
         this.velocidade += kilometrosHora;
+        System.out.println("Voce acelerou ate "+ this.velocidade +" km/h com sucesso.");
         }
     }
 
     public void colocaPassageiros(int quantidade) {
         if (this.numeroPassageiros + quantidade <= this.numeroMaximoDePassageiros){
             this.numeroPassageiros += quantidade;
+            System.out.println("Colocado "+ this.numeroPassageiros +" pessoas no carro com sucesso.");
         } else {
             System.out.println("Nao ha mais lugares disponiveis no carro");
         }
@@ -109,6 +128,7 @@ public class Carro implements CarroInteligente {
     public void removePassageiros(int quantidade) {
         if (this.numeroPassageiros - quantidade >= 0){
             this.numeroPassageiros -= quantidade;
+            System.out.println("Removido "+ this.numeroPassageiros +" pessoas no carro com sucesso.");
         } else {
             System.out.println("Nao existe essa quantidade de pessoas no carro");
         }
@@ -120,6 +140,7 @@ public class Carro implements CarroInteligente {
 
     public void setNumeroMaximoDePassageiros(int numeroMaximoDePassageiros) {
         this.numeroMaximoDePassageiros = numeroMaximoDePassageiros;
+        System.out.println("Definido o numero maximo de passageiros no carro: " + this.numeroMaximoDePassageiros + " passageiros com sucesso.");
     }
 
     public int getNumeroMaximoDePassageiros() {
@@ -128,10 +149,12 @@ public class Carro implements CarroInteligente {
 
     public void ligarRadio() {
         this.radioLigado = true;
+        System.out.println("Radio ligado com sucesso.");
     }
 
     public void desligarRadio() {
         this.radioLigado = false;
+        System.out.println("Radio desligado com sucesso.");
     }
 
     public boolean isRadioLigado() {
@@ -140,6 +163,7 @@ public class Carro implements CarroInteligente {
 
     public void setAlturaDoVidro(AlturaDoVidro alturaDoVidro) {
         this.alturaDoVidro = alturaDoVidro;
+        System.out.println("Definido a altura do vidro com sucesso: " + this.alturaDoVidro);
     }
 
     public AlturaDoVidro getAlturaDoVidro() {
@@ -149,6 +173,7 @@ public class Carro implements CarroInteligente {
     public void colocaCinto(int quantidadePassageiros) {
         if (this.numeroPassageiros >= quantidadePassageiros) {
             this.quantidadePassageirosComCinto += quantidadePassageiros;
+            System.out.println("Adicionado o cinto de seguranca em " + quantidadePassageiros + " passageiros.");
         } else {
             System.out.println("Nao existe essa quantidade de passageiros no carro.");
         }
@@ -157,6 +182,7 @@ public class Carro implements CarroInteligente {
     public void removeCinto(int quantidadePassageiros) {
         if (this.quantidadePassageirosComCinto >= quantidadePassageiros) {
             this.quantidadePassageirosComCinto -= quantidadePassageiros;
+            System.out.println("Removido o cinto de seguranca de " + quantidadePassageiros + " passageiros.");
         } else {
             System.out.println("Nao existe essa quantidade de passageiros com cinto no carro.");
         }
@@ -169,11 +195,13 @@ public class Carro implements CarroInteligente {
     public void abrirPortaMalas() {
         if (velocidade == 0 && !motorLigado) {
         this.portaMalaAberto = true;
+        System.out.println("Porta malas aberto com sucesso.");
         }
     }
 
     public void fecharPortaMalas() {
         this.portaMalaAberto = false;
+        System.out.println("Porta malas fechado com sucesso.");
     }
 
     public boolean isPortaMalasAberto() {
@@ -183,6 +211,7 @@ public class Carro implements CarroInteligente {
     public void adicionarBagagem(double pesoDaBagagem) {
         if (this.pesoBagagem + pesoDaBagagem <= this.limiteDePesoDaBagagem){
             this.pesoBagagem += pesoDaBagagem;
+            System.out.println("Adicionado " + pesoDaBagagem + " kg de bagagem com sucesso.");
         } else {
             System.out.println("Peso maximo excedido de bagagem");
         }
@@ -191,6 +220,7 @@ public class Carro implements CarroInteligente {
     public void removerBagagem(double pesoDaBagagem) {
         if (this.pesoBagagem - pesoDaBagagem >= 0){
             this.pesoBagagem -= pesoDaBagagem;
+            System.out.println("Removido " + pesoDaBagagem + " kg de bagagem com sucesso.");
         } else {
             System.out.println("Nao ha mais bagagem no carro");
         }
@@ -202,6 +232,7 @@ public class Carro implements CarroInteligente {
 
     public void setLimiteDePesoDaBagagem(double limiteDePesoDaBagagem) {
         this.limiteDePesoDaBagagem = limiteDePesoDaBagagem;
+        System.out.println("Definido o novo limite de peso da bagagem com sucesso:  " + this.limiteDePesoDaBagagem + " kg.");
     }
 
     public double getLimiteDePesoDaBagagem() {
@@ -210,5 +241,6 @@ public class Carro implements CarroInteligente {
 
     public void pararCarro() {
         this.velocidade = 0;
+        System.out.println("O carro foi parado com sucesso.");
     }
 }
