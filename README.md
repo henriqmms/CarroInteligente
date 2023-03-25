@@ -1,6 +1,6 @@
 # Carro Inteligente
 
-Neste programa, foi criada uma classe para controlar um carro inteligente, feito por Henrique Marques Moreira da Silva, a ser entregue para a empresa OTP.
+Neste programa, foi criada uma classe para controlar um carro inteligente, feito por Henrique Marques Moreira da Silva, a ser entregue para a empresa OPT.
 
 ## Regras
 
