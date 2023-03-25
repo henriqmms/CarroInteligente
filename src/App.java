@@ -13,6 +13,12 @@ public class App {
         meuCarro.removeCinto(1);
         meuCarro.removePassageiros(1);
         meuCarro.removerBagagem(20);
+        meuCarro.engatarMarcha(Marcha.PRIMEIRA);
+        meuCarro.acelerar(10);
+        meuCarro.engatarMarcha(Marcha.RE);
+        meuCarro.pararCarro();
+        meuCarro.engatarMarcha(Marcha.RE);
+        meuCarro.acelerar(10);
 
         System.out.println("\nO carro atualmente esta nas seguintes condicoes:\n");
 

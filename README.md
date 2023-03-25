@@ -51,3 +51,12 @@ Agradeço a empresa OPT pela oportunidade de realizar este teste, espero colabor
 <a href="https://www.linkedin.com/in/henriquemmsilva/" target="_blank"><img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a> 
 <a href="https://instagram.com/henriqm_" target="_blank"><img src="https://img.shields.io/badge/-Instagram-%23E4405F?style=for-the-badge&logo=instagram&logoColor=white" target="_blank"></a>
   </div>
+
+## Minhas observações
+
+Se eu tivesse mais tempo, adicionaria testes unitários.
+
+Sugestões de incrementações ao programa:
+- Adicionar novo método: freiarCarro.
+- Adicionar nova regra: nao acelerar com motor desligado.
+- Adicionar novos atributos: condicoesDoCarro (combustivel, oleo, água), calibraçãoDosPneus.

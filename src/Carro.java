@@ -17,6 +17,8 @@ public class Carro implements CarroInteligente {
         if (numeroPassageiros == quantidadePassageirosComCinto && !portasAbertas && numeroPassageiros <= numeroMaximoDePassageiros && pesoBagagem <= limiteDePesoDaBagagem && !portaMalaAberto) {
         this.motorLigado = true;
         System.out.println("Motor ligado com sucesso.");
+        } else {
+            System.out.println("Nao foi possivel ligar o motor.");
         }
     }
     
@@ -38,6 +40,8 @@ public class Carro implements CarroInteligente {
         if (!motorLigado){
         this.portasAbertas = true;
         System.out.println("Portas abertas com sucesso.");
+        } else {
+            System.out.println("Nao foi possivel abrir as portas.");
         }
     }
 
@@ -64,6 +68,8 @@ public class Carro implements CarroInteligente {
                     System.out.println("Alarme ativado com sucesso.");
                 }
             }
+        } else {
+            System.out.println("Nao foi possivel ativar o alarme.");
         }
     }
 
@@ -79,17 +85,22 @@ public class Carro implements CarroInteligente {
     public void engatarMarcha(Marcha marcha) {
         if (!portasAbertas) {
             if (marcha != Marcha.RE) {
-                if (velocidade >= 0) {
+                if (this.velocidade >= 0) {
                     this.marchaEngatada = marcha;
                     System.out.println("Marcha " + this.marchaEngatada + " engatada com sucesso.");
+                } else {
+                    System.out.println("Nao foi possivel engatar a marcha selecionada.");
+                }
+            } else {
+                if (this.velocidade > 0) {
+                    System.out.println("Nao foi possivel engatar a marcha RE.");
                 } else {
                     this.marchaEngatada = Marcha.RE;
                     System.out.println("Marcha RE engatada com sucesso.");
                 }
-            } else {
-                this.marchaEngatada = Marcha.RE;
-                System.out.println("Marcha RE engatada com sucesso.");
             }
+        } else {
+            System.out.println("Nao foi possivel engatar nenhuma marcha.");
         }
     }
 
@@ -108,7 +119,11 @@ public class Carro implements CarroInteligente {
 
     public void acelerar(double kilometrosHora) {
         if (this.marchaEngatada == Marcha.RE) {
-            this.velocidade -= kilometrosHora;
+            if (this.velocidade > 0) {
+                this.velocidade = kilometrosHora * (-1);
+            } else {
+                this.velocidade -= kilometrosHora;
+            } 
             System.out.println("Voce acelerou ate "+ this.velocidade +" km/h com sucesso.");
         } else {
         this.velocidade += kilometrosHora;
@@ -119,7 +134,7 @@ public class Carro implements CarroInteligente {
     public void colocaPassageiros(int quantidade) {
         if (this.numeroPassageiros + quantidade <= this.numeroMaximoDePassageiros){
             this.numeroPassageiros += quantidade;
-            System.out.println("Colocado "+ this.numeroPassageiros +" pessoas no carro com sucesso.");
+            System.out.println("Colocado "+ this.numeroPassageiros +" passageiros no carro com sucesso.");
         } else {
             System.out.println("Nao ha mais lugares disponiveis no carro");
         }
@@ -128,9 +143,9 @@ public class Carro implements CarroInteligente {
     public void removePassageiros(int quantidade) {
         if (this.numeroPassageiros - quantidade >= 0){
             this.numeroPassageiros -= quantidade;
-            System.out.println("Removido "+ this.numeroPassageiros +" pessoas no carro com sucesso.");
+            System.out.println("Removido "+ this.numeroPassageiros +" passageiros no carro com sucesso.");
         } else {
-            System.out.println("Nao existe essa quantidade de pessoas no carro");
+            System.out.println("Nao existe essa quantidade de passageiros no carro");
         }
     }
     
@@ -140,7 +155,7 @@ public class Carro implements CarroInteligente {
 
     public void setNumeroMaximoDePassageiros(int numeroMaximoDePassageiros) {
         this.numeroMaximoDePassageiros = numeroMaximoDePassageiros;
-        System.out.println("Definido o numero maximo de passageiros no carro: " + this.numeroMaximoDePassageiros + " passageiros com sucesso.");
+        System.out.println("Definido o numero maximo de passageiros no carro com sucesso: " + this.numeroMaximoDePassageiros + " passageiros.");
     }
 
     public int getNumeroMaximoDePassageiros() {
@@ -196,6 +211,8 @@ public class Carro implements CarroInteligente {
         if (velocidade == 0 && !motorLigado) {
         this.portaMalaAberto = true;
         System.out.println("Porta malas aberto com sucesso.");
+        } else {
+            System.out.println("Nao foi possivel abrir o Porta-malas");
         }
     }
 
