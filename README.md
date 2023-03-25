@@ -36,6 +36,10 @@ Neste programa, foi criada uma classe para controlar um carro inteligente, feito
 
 >Ao acelerar o carro, se a ré estiver engatada, a aceleração deve ser negativa.
 
+### Estado inicial
+
+>Seu carro começa com alarme desativado, portas fechadas, parado, com porta malas fechado, sem bagagens, sem passageiros, com o cambio desengatado, radio desligado, com 5 de limite de passageiros e limite de 100kg de bagagens.
+
 ## Agradecimento
 
 Agradeço a empresa OPT pela oportunidade de realizar este teste, espero colaborar com muito mais!
