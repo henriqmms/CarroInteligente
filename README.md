@@ -1,4 +1,4 @@
-## Carro Inteligente
+# Carro Inteligente
 
 Neste programa, foi criada uma classe para controlar um carro inteligente, feito por Henrique Marques Moreira da Silva, a ser entregue para a empresa OTP.
 
@@ -39,3 +39,11 @@ Neste programa, foi criada uma classe para controlar um carro inteligente, feito
 ## Agradecimento
 
 Agradeço a empresa OPT pela oportunidade de realizar este teste, espero colaborar com muito mais!
+
+## Contate-me:
+
+<div>
+<a href = "mailto:henrique.marquesmoreira@gmail.com"><img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" target="_blank"></a>
+<a href="https://www.linkedin.com/in/henriquemmsilva/" target="_blank"><img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a> 
+<a href="https://instagram.com/henriqm_" target="_blank"><img src="https://img.shields.io/badge/-Instagram-%23E4405F?style=for-the-badge&logo=instagram&logoColor=white" target="_blank"></a>
+  </div>
