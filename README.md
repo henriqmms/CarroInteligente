@@ -40,6 +40,15 @@ Neste programa, foi criada uma classe para controlar um carro inteligente, feito
 
 >Seu carro começa com alarme desativado, portas fechadas, parado, com porta malas fechado, sem bagagens, sem passageiros, com o cambio desengatado, radio desligado, com 5 de limite de passageiros e limite de 100kg de bagagens.
 
+## Minhas observações
+
+Se eu tivesse mais tempo, adicionaria testes unitários.
+
+Sugestões de incrementações ao programa:
+- Adicionar novo método: freiarCarro.
+- Adicionar nova regra: nao acelerar com motor desligado.
+- Adicionar novos atributos: condicoesDoCarro (combustivel, oleo, água), calibraçãoDosPneus.
+
 ## Agradecimento
 
 Agradeço a empresa OPT pela oportunidade de realizar este teste, espero colaborar com muito mais!
@@ -51,12 +60,3 @@ Agradeço a empresa OPT pela oportunidade de realizar este teste, espero colabor
 <a href="https://www.linkedin.com/in/henriquemmsilva/" target="_blank"><img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a> 
 <a href="https://instagram.com/henriqm_" target="_blank"><img src="https://img.shields.io/badge/-Instagram-%23E4405F?style=for-the-badge&logo=instagram&logoColor=white" target="_blank"></a>
   </div>
-
-## Minhas observações
-
-Se eu tivesse mais tempo, adicionaria testes unitários.
-
-Sugestões de incrementações ao programa:
-- Adicionar novo método: freiarCarro.
-- Adicionar nova regra: nao acelerar com motor desligado.
-- Adicionar novos atributos: condicoesDoCarro (combustivel, oleo, água), calibraçãoDosPneus.
